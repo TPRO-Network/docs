@@ -6,4 +6,5 @@
 * [Managing Risks](managing-risks.md)
 * [Objectives and Design Considerations](objectives-and-design-considerations.md)
 * [Proposed Solutions](proposed-solutions.md)
+* [Economic Simulations](economic-simulations.md)
 * [TPRO Public API](public-api.md)
