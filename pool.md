@@ -45,7 +45,7 @@ Table 1. Dynamic Fee Parameters
 
 Based on the above parameters, the mathematical specification of the mechanism is defined.
 <a name="mechanism_mathematical_specification_dynamic_fee"></a>
-### Mechanisms mathematical specification
+## Mechanisms mathematical specification
 
 The mechanism for dynamic fee adjustment is divided into several components. The first component handles the fee for TPRO purchase transactions. Two key metrics are defined to support the mechanism, calculated using the following formulas:
 
@@ -70,8 +70,7 @@ where:
 Based on these key metrics, the fee for TPRO purchase transactions is calculated as follows:
 
 $$
-Fee_{buy} =
-\begin{cases} 
+Fee_{buy} = \begin{cases} 
 min\_-fee\_-buy, & \text{if } price_{current} \leq price\_-buy_{min} \\ 
 max\_-fee\_-buy, & \text{if } price_{current} \geq price\_-buy_{max} \\ 
 min\_-fee\_-buy + \frac{max\_-fee\_-buy - min\_-fee\_-buy}{price\_-buy_{max} - price\_-buy_{min}} \cdot (price_{current} - price\_-buy_{min}), & \text{otherwise.}
@@ -259,7 +258,7 @@ This protection mechanism minimizes exposure to impermanent loss while fostering
 
 
 <a name="impermanent_loss_protection_machnism_parameters"></a>
-### Mechanism parameters
+## Mechanism parameters
 
 **Table 2. Impermanent Loss Protection Mechanism Parameters**
 
@@ -268,8 +267,9 @@ This protection mechanism minimizes exposure to impermanent loss while fostering
 | `success_fee`  | Part of the unrealized protection for the liquidity provider charged as remuneration on effective protection against impermanent loss. | 0.1 (10%)   |
 
 Based on the above parameters, the mathematical specification of the mechanism is defined.
+
 <a name="impermanent_loss_protection_mathematical_specification"></a>
-### Mechanisms mathematical specification
+## Mechanisms mathematical specification
 
 Fees collected by the liquidity pool for the protection mechanism are collected in separate pools of ETH and TPRO tokens. Each time a liquidity provider joins, leaves the protection program, or increases its deposit, the collected funds are redistributed to users to ensure a fair allocation of collateral. We define $$t_i$$ as the moments when the distribution of pool shares changes due to user actions. Let $$t_{i-1}$$ represent the previous moment of such a change, and $$t_0$$ denote the initial moment of the pool's creation. The amount of collected assets is calculated using the following formulas:
 
