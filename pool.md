@@ -23,7 +23,7 @@ The primary objectives of the dynamic fee mechanism include:
 
 This dynamic approach ensures that the fee structure evolves with market conditions and participant behavior, creating a fair and adaptive framework. The hedging mechanism for impermanent loss, which complements the dynamic fee system, is discussed in detail in a separate section.
 <a name="mechanism_parameters_dynamic_fee"></a>
-### Mechanism parameters
+## Mechanism parameters
 The table below shows the key parameters of the dynamic fee mechanism.
 Table 1. Dynamic Fee Parameters
 
@@ -47,7 +47,7 @@ Based on the above parameters, the mathematical specification of the mechanism i
 <a name="mechanism_mathematical_specification_dynamic_fee"></a>
 ### Mechanisms mathematical specification
 
-The mechanism for dynamic fee adjustment is divided into several components. The first component handles the fee for \$TPRO purchase transactions. Two key metrics are defined to support the mechanism, calculated using the following formulas:
+The mechanism for dynamic fee adjustment is divided into several components. The first component handles the fee for TPRO purchase transactions. Two key metrics are defined to support the mechanism, calculated using the following formulas:
 
 $$
 price_-buy_{min} = avg_-price_-24h_{before} \cdot (1 + min_-price_-tolerance_-buy) 
@@ -57,15 +57,15 @@ $$
 price_-buy_{max} = avg_-price_-24h_{before} \cdot (1 + max_-price_-tolerance_-buy)
 $$
 
-<p align="center"><b>Formula 1. Dynamic Price Thresholds for $TPRO Purchase Transactions</b></p>
+<p align="center"><b>Formula 1. Dynamic Price Thresholds for TPRO Purchase Transactions</b></p>
 
 where:  
 
-- $price_-buy_{min}$ is the \$TPRO price that triggers the raising of the fee on purchase transactions,  
-- $price_-buy_{max}$ is the price of the \$TPRO, beyond which the maximum fee on purchase transactions,  
-- $avg_-price_-24h_{before}$ is the average \$TPRO price over the last 24 hours preceding the update fee,  
-- $min_-price_-tolerance_-buy$ is a parameter describing the percentage change in the \$TPRO price that triggers the raising of the fee on purchase transactions,  
-- $max_-price_-tolerance_-buy$ is a parameter describing the percentage change in the price of the \$TPRO, beyond which the maximum fee on purchase transactions.  
+- $ price_-buy_{min} $ is the TPRO price that triggers the raising of the fee on purchase transactions,  
+- $$ price_-buy_{max} $$ is the price of the TPRO, beyond which the maximum fee on purchase transactions,  
+- $$avg_-price_-24h_{before} is the average TPRO price over the last 24 hours preceding the update fee,  $$
+- $min_-price_-tolerance_-buy$ is a parameter describing the percentage change in the TPRO price that triggers the raising of the fee on purchase transactions,  
+- $max_-price_-tolerance_-buy$ is a parameter describing the percentage change in the price of the TPRO, beyond which the maximum fee on purchase transactions.  
 
 Based on these key metrics, the fee for \$TPRO purchase transactions is calculated as follows:
 
@@ -78,7 +78,7 @@ min\_-fee\_-buy + \frac{max\_-fee\_-buy - min\_-fee\_-buy}{price\_-buy_{max} - p
 \end{cases}
 $$
 
-<p align="center"><b>Formula 2. Dynamic Fee for $TPRO Buying Transactions</b></p>
+<p align="center"><b>Formula 2. Dynamic Fee for TPRO Buying Transactions</b></p>
 
 where:
 
