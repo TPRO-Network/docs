@@ -61,11 +61,11 @@ $$
 
 where:  
 
-- $$ price_-buy_{min} $$ is the TPRO price that triggers the raising of the fee on purchase transactions,  
-- $$ price_-buy_{max} $$ is the price of the TPRO, beyond which the maximum fee on purchase transactions,  
-- $$ avg_-price_-24h_{before} $$ is the average TPRO price over the last 24 hours preceding the update fee,
-- $$ min_-price_-tolerance_-buy $$ is a parameter describing the percentage change in the TPRO price that triggers the raising of the fee on purchase transactions,  
-- $$ max_-price_-tolerance_-buy $$ is a parameter describing the percentage change in the price of the TPRO, beyond which the maximum fee on purchase transactions.  
+- $$price_-buy_{min}$$ is the TPRO price that triggers the raising of the fee on purchase transactions,  
+- $$price_-buy_{max}$$ is the price of the TPRO, beyond which the maximum fee on purchase transactions,  
+- $$avg_-price_-24h_{before}$$ is the average TPRO price over the last 24 hours preceding the update fee,
+- $$min_-price_-tolerance_-buy$$ is a parameter describing the percentage change in the TPRO price that triggers the raising of the fee on purchase transactions,  
+- $$max_-price_-tolerance_-buy$$ is a parameter describing the percentage change in the price of the TPRO, beyond which the maximum fee on purchase transactions.  
 
 Based on these key metrics, the fee for TPRO purchase transactions is calculated as follows:
 
@@ -82,19 +82,19 @@ $$
 
 where:
 
-- $$ Fee_{buy} $$ is the fee applied to a TPRO buying transaction,  
-- $$ min\_-fee\_-buy $$ is a parameter describing the minimum fee applied to TPRO buying transactions,  
-- $$ max\_-fee\_-buy $$ is a parameter describing the maximum fee applied to TPRO buying transactions,  
-- $$ price_{current} $$ is the current price of the TPRO,  
-- $$ price\_-buy_{min} $$ is the TPRO price that triggers the raising of the fee on purchase transactions,  
-- $$ price\_-buy_{max} $$ is the price of the TPRO, beyond which the maximum fee on purchase transactions.  
+- $$Fee_{buy}$$ is the fee applied to a TPRO buying transaction,  
+- $$min\_-fee\_-buy$$ is a parameter describing the minimum fee applied to TPRO buying transactions,  
+- $$max\_-fee\_-buy$$ is a parameter describing the maximum fee applied to TPRO buying transactions,  
+- $$price_{current}$$ is the current price of the TPRO,  
+- $$price\_-buy_{min}$$ is the TPRO price that triggers the raising of the fee on purchase transactions,  
+- $$price\_-buy_{max}$$ is the price of the TPRO, beyond which the maximum fee on purchase transactions.  
 
 The chart below illustrates an example of how the fee value varies with the TPRO price.
 ![fee_buy_price_component.png](.gitbook%2Fassets%2Ffee_buy_price_component.png)
 
 <p align="center"><b>Figure 1. Buy transaction fee.</b></p>
 
-In the case of fee for \$TPRO sales, the mechanism is more elaborate. Its first component works on a similar basis. Based on the parameters and the average price of the previous day, the following metrics are determined:
+In the case of fee for TPRO sales, the mechanism is more elaborate. Its first component works on a similar basis. Based on the parameters and the average price of the previous day, the following metrics are determined:
 
 $$
 price\_-sell_{min} = avg\_-price\_-24h_{before} \cdot (1 - min\_-price\_-tolerance\_-sell)
@@ -108,11 +108,11 @@ $$
 
 where:
 
-- $$ price\_-sell_{min} $$ is the TPRO price that triggers the raising of the fee on sale transactions,  
-- $$ price\_-sell_{max} $$ is the price of the TPRO, beyond which the maximum fee on purchase transactions,  
-- $$ avg\_-price\_-24h_{before} $$ is the average TPRO price over the last 24 hours preceding the update fee,  
-- $$ min\_-price\_-tolerance\_-sell $$ is a parameter describing percentage change in the price of the TPRO that triggers fee raising on sales transactions,  
-- $$ max\_-price\_-tolerance\_-sell $$ is a parameter describing the percentage change in the price of the TPRO, below which the maximum fee on sales transactions.  
+- $$price\_-sell_{min}$$ is the TPRO price that triggers the raising of the fee on sale transactions,  
+- $$price\_-sell_{max}$$ is the price of the TPRO, beyond which the maximum fee on purchase transactions,  
+- $$avg\_-price\_-24h_{before}$$ is the average TPRO price over the last 24 hours preceding the update fee,  
+- $$min\_-price\_-tolerance\_-sell$$ is a parameter describing percentage change in the price of the TPRO that triggers fee raising on sales transactions,  
+- $$max\_-price\_-tolerance\_-sell$$ is a parameter describing the percentage change in the price of the TPRO, below which the maximum fee on sales transactions.  
 
 These key metrics are used to determine the first component of fee.
 
@@ -129,12 +129,12 @@ $$
 
 where:
 
-- $$ Fee_{sell}^{price} $$ is the fee component for TPRO selling transactions based on price,  
-- $$ min\_-fee\_-sell $$ is a parameter describing the minimum fee applied to TPRO selling transactions,  
-- $$ max\_-fee\_-sell $$ is a parameter describing the maximum fee applied to TPRO selling transactions,  
-- $$ price_{current} $$ is the current price of the TPRO,  
-- $$ price\_-sell_{min} $$ is the TPRO price that triggers the raising of the fee on sale transactions,  
-- $$ price\_-sell_{max} $$ is the price of the TPRO, beyond which the maximum fee on purchase transactions.  
+- $$Fee_{sell}^{price}$$ is the fee component for TPRO selling transactions based on price,  
+- $$min\_-fee\_-sell$$ is a parameter describing the minimum fee applied to TPRO selling transactions,  
+- $$max\_-fee\_-sell$$ is a parameter describing the maximum fee applied to TPRO selling transactions,  
+- $$price_{current}$$ is the current price of the TPRO,  
+- $$price\_-sell_{min}$$ is the TPRO price that triggers the raising of the fee on sale transactions,  
+- $$price\_-sell_{max}$$ is the price of the TPRO, beyond which the maximum fee on purchase transactions.  
 
 ![fee_sell_price_component.png](.gitbook%2Fassets%2Ffee_sell_price_component.png)
 
@@ -153,13 +153,13 @@ $$
 
 where:
 
-- $$ eth\_-price\_-adjusted\_-fee $$ is the fee adjusted for TPRO selling transactions based on changes in ETH price,  
-- $$ average\_-eth\_-price\_-24h $$ is the average ETH price over the last 24 hours,  
-- $$ average\_-eth\_-price\_-7d $$ is the average ETH price over the last 7 days,  
-- $$ eth\_-price\_-max\_-tolerance $$ is a parameter describing the maximum tolerance for changes in ETH price,  
-- $$ eth\_-price\_-min\_-tolerance $$ is a parameter describing the minimum tolerance for changes in ETH price,  
-- $$ max\_-fee\_-sell $$ is a parameter describing the maximum fee applied to TPRO selling transactions,  
-- $$ min\_-fee\_-sell $$ is a parameter describing the minimum fee applied to TPRO selling transactions.  
+- $$eth\_-price\_-adjusted\_-fee$$ is the fee adjusted for TPRO selling transactions based on changes in ETH price,  
+- $$average\_-eth\_-price\_-24h$$ is the average ETH price over the last 24 hours,  
+- $$average\_-eth\_-price\_-7d$$ is the average ETH price over the last 7 days,  
+- $$eth\_-price\_-max\_-tolerance$$ is a parameter describing the maximum tolerance for changes in ETH price,  
+- $$eth\_-price\_-min\_-tolerance$$ is a parameter describing the minimum tolerance for changes in ETH price,  
+- $$max\_-fee\_-sell$$ is a parameter describing the maximum fee applied to TPRO selling transactions,  
+- $$min\_-fee\_-sell$$ is a parameter describing the minimum fee applied to TPRO selling transactions.  
 
 This component is subject to specific limitations, outlined in the formula below:
 
@@ -176,14 +176,14 @@ $$
 
 where:
 
-- $$ Fee_{sell}^{eth} $$ is the ETH price component of the fee applied to TPRO selling transactions,  
-- $$ max\_-fee\_-sell $$ is a parameter describing the maximum fee applied to TPRO selling transactions,  
-- $$ min\_-fee\_-sell $$ is a parameter describing the minimum fee applied to TPRO selling transactions,  
-- $$ average\_-eth\_-price\_-24h $$ is the average ETH price over the last 24 hours,  
-- $$ average\_-eth\_-price\_-7d $$ is the average ETH price over the last 7 days,  
-- $$ eth\_-price\_-max\_-tolerance $$ is a parameter describing the maximum tolerance for changes in ETH price,  
-- $$ eth\_-price\_-min\_-tolerance $$ is a parameter describing the minimum tolerance for changes in ETH price,  
-- $$ eth\_-price\_-adjusted\_-fee $$ is the fee adjusted for TPRO selling transactions based on changes in ETH price.
+- $$Fee_{sell}^{eth}$$ is the ETH price component of the fee applied to TPRO selling transactions,  
+- $$max\_-fee\_-sell$$ is a parameter describing the maximum fee applied to TPRO selling transactions,  
+- $$min\_-fee\_-sell$$ is a parameter describing the minimum fee applied to TPRO selling transactions,  
+- $$average\_-eth\_-price\_-24h$$ is the average ETH price over the last 24 hours,  
+- $$average\_-eth\_-price\_-7d$$ is the average ETH price over the last 7 days,  
+- $$eth\_-price\_-max\_-tolerance$$ is a parameter describing the maximum tolerance for changes in ETH price,  
+- $$eth\_-price\_-min\_-tolerance$$ is a parameter describing the minimum tolerance for changes in ETH price,  
+- $$eth\_-price\_-adjusted\_-fee$$ is the fee adjusted for TPRO selling transactions based on changes in ETH price.
 
 ![eth_price_sell_component.png](.gitbook%2Fassets%2Feth_price_sell_component.png)
 
@@ -199,10 +199,10 @@ $$
 
 where:
 
-- $$ Fee_{sell} $$ is the fee applied to TPRO selling transactions,  
-- $$ eth\_-component\_-weight $$ is a parameter describing the weight of the ETH component throughout the fee for sale transactions,  
-- $$ Fee\_{sell}^{price} $$ is the fee component based on TPRO price changes,  
-- $$ Fee\_{sell}^{eth} $$ is the fee component based on ETH price changes.  
+- $$Fee_{sell}$$ is the fee applied to TPRO selling transactions,  
+- $$eth\_-component\_-weight$$ is a parameter describing the weight of the ETH component throughout the fee for sale transactions,  
+- $$Fee\_{sell}^{price}$$ is the fee component based on TPRO price changes,  
+- $$Fee\_{sell}^{eth}$$ is the fee component based on ETH price changes.  
 
 A primary objective of the dynamic fee mechanism is to allocate fees toward the impermanent loss protection mechanism. At a given moment $$t$$, when a purchase transaction occurs, the collected fee is distributed as follows:
 
