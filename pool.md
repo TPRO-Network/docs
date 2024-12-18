@@ -118,9 +118,9 @@ These key metrics are used to determine the first component of fee.
 $$
 Fee_{sell}^{price} =
 \begin{cases} 
-min\_-fee\_-sell, & \text{if } price_{current} \geq price\_-sell_{min} \\ 
-max\_-fee\_-sell, & \text{if } price_{current} \leq price\_-sell_{max} \\ 
-min\_-fee\_-sell + \frac{max\_-fee\_-sell - min\_-fee\_-sell}{price\_-sell_{max} - price\_-sell_{min}} \cdot (price_{current} - price\_-sell_{min}), & \text{otherwise.}
+min_-fee_-sell, & \text{if } price_{current} \geq price_-sell_{min} \\ 
+max_-fee_-sell, & \text{if } price_{current} \leq price_-sell_{max} \\ 
+min_-fee_-sell + \frac{max_-fee_-sell - min_-fee_-sell}{price_-sell_{max} - price_-sell_{min}} \cdot (price_{current} - price_-sell_{min}), & \text{otherwise.}
 \end{cases}
 $$
 
