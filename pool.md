@@ -129,11 +129,11 @@ $$
 where:
 
 - $$Fee_{sell}^{price}$$ is the fee component for TPRO selling transactions based on price,  
-- $$min\_-fee\_-sell$$ is a parameter describing the minimum fee applied to TPRO selling transactions,  
-- $$max\_-fee\_-sell$$ is a parameter describing the maximum fee applied to TPRO selling transactions,  
+- $$min_-fee_-sell$$ is a parameter describing the minimum fee applied to TPRO selling transactions,  
+- $$max_-fee_-sell$$ is a parameter describing the maximum fee applied to TPRO selling transactions,  
 - $$price_{current}$$ is the current price of the TPRO,  
-- $$price\_-sell_{min}$$ is the TPRO price that triggers the raising of the fee on sale transactions,  
-- $$price\_-sell_{max}$$ is the price of the TPRO, beyond which the maximum fee on purchase transactions.  
+- $$price_-sell_{min}$$ is the TPRO price that triggers the raising of the fee on sale transactions,  
+- $$price_-sell_{max}$$ is the price of the TPRO, beyond which the maximum fee on purchase transactions.  
 
 ![fee_sell_price_component.png](.gitbook%2Fassets%2Ffee_sell_price_component.png)
 
@@ -142,32 +142,32 @@ where:
 The second component of the fee for selling TPRO is influenced by fluctuations in the ETH price over the past 7 days. To account for this, the fee is calculated based on these price changes as follows:
 
 $$
-eth\_-price\_-adjusted\_-fee = 
+eth_-price_-adjusted_-fee = 
 $$
 $$
-\left( \frac{average\_-eth\_-price\_-24h}{average\_-eth\_-price\_-7d} - 1 - eth\_-price\_-max\_-tolerance \right) \cdot \frac{max\_-fee\_-sell - min\_-fee\_-sell}{eth\_-price\_-max\_-tolerance - eth\_-price\_-min\_-tolerance} + max\_-fee\_-sell
+\left( \frac{average_-eth_-price_-24h}{average_-eth_-price_-7d} - 1 - eth_-price_-max_-tolerance \right) \cdot \frac{max_-fee_-sell - min_-fee_-sell}{eth_-price_-max_-tolerance - eth_-price_-min_-tolerance} + max_-fee_-sell
 $$
 
 <p align="center"><b>Formula 5. Fee Adjustment Based on ETH Price</b></p>
 
 where:
 
-- $$eth\_-price\_-adjusted\_-fee$$ is the fee adjusted for TPRO selling transactions based on changes in ETH price,  
-- $$average\_-eth\_-price\_-24h$$ is the average ETH price over the last 24 hours,  
-- $$average\_-eth\_-price\_-7d$$ is the average ETH price over the last 7 days,  
-- $$eth\_-price\_-max\_-tolerance$$ is a parameter describing the maximum tolerance for changes in ETH price,  
-- $$eth\_-price\_-min\_-tolerance$$ is a parameter describing the minimum tolerance for changes in ETH price,  
-- $$max\_-fee\_-sell$$ is a parameter describing the maximum fee applied to TPRO selling transactions,  
-- $$min\_-fee\_-sell$$ is a parameter describing the minimum fee applied to TPRO selling transactions.  
+- $$eth_-price_-adjusted_-fee$$ is the fee adjusted for TPRO selling transactions based on changes in ETH price,  
+- $$average_-eth_-price_-24h$$ is the average ETH price over the last 24 hours,  
+- $$average_-eth_-price_-7d$$ is the average ETH price over the last 7 days,  
+- $$eth_-price_-max_-tolerance$$ is a parameter describing the maximum tolerance for changes in ETH price,  
+- $$eth_-price_-min_-tolerance$$ is a parameter describing the minimum tolerance for changes in ETH price,  
+- $$max_-fee_-sell$$ is a parameter describing the maximum fee applied to TPRO selling transactions,  
+- $$min_-fee_-sell$$ is a parameter describing the minimum fee applied to TPRO selling transactions.  
 
 This component is subject to specific limitations, outlined in the formula below:
 
 $$
 Fee_{sell}^{eth} =
 \begin{cases} 
-min\_-fee\_-sell, & \text{if } \frac{average\_-eth\_-price\_-24h}{average\_-eth\_-price\_-7d} - 1 \leq eth\_-price\_-min\_-tolerance, \\  
-max\_-fee\_-sell, & \text{if } \frac{average\_-eth\_-price\_-24h}{average\_-eth\_-price\_-7d} - 1 \geq eth\_-price\_-max\_-tolerance, \\  
-eth\_-price\_-adjusted\_-fee, & \text{otherwise.}
+min_-fee_-sell, & \text{if } \frac{average_-eth_-price_-24h}{average_-eth_-price_-7d} - 1 \leq eth_-price_-min_-tolerance, \\  
+max_-fee_-sell, & \text{if } \frac{average_-eth_-price_-24h}{average_-eth_-price_-7d} - 1 \geq eth_-price_-max_-tolerance, \\  
+eth_-price_-adjusted_-fee, & \text{otherwise.}
 \end{cases}
 $$
 
@@ -176,13 +176,13 @@ $$
 where:
 
 - $$Fee_{sell}^{eth}$$ is the ETH price component of the fee applied to TPRO selling transactions,  
-- $$max\_-fee\_-sell$$ is a parameter describing the maximum fee applied to TPRO selling transactions,  
-- $$min\_-fee\_-sell$$ is a parameter describing the minimum fee applied to TPRO selling transactions,  
-- $$average\_-eth\_-price\_-24h$$ is the average ETH price over the last 24 hours,  
-- $$average\_-eth\_-price\_-7d$$ is the average ETH price over the last 7 days,  
-- $$eth\_-price\_-max\_-tolerance$$ is a parameter describing the maximum tolerance for changes in ETH price,  
-- $$eth\_-price\_-min\_-tolerance$$ is a parameter describing the minimum tolerance for changes in ETH price,  
-- $$eth\_-price\_-adjusted\_-fee$$ is the fee adjusted for TPRO selling transactions based on changes in ETH price.
+- $$max_-fee_-sell$$ is a parameter describing the maximum fee applied to TPRO selling transactions,  
+- $$min_-fee_-sell$$ is a parameter describing the minimum fee applied to TPRO selling transactions,  
+- $$average_-eth_-price_-24h$$ is the average ETH price over the last 24 hours,  
+- $$average_-eth_-price_-7d$$ is the average ETH price over the last 7 days,  
+- $$eth_-price_-max_-tolerance$$ is a parameter describing the maximum tolerance for changes in ETH price,  
+- $$eth_-price_-min_-tolerance$$ is a parameter describing the minimum tolerance for changes in ETH price,  
+- $$eth_-price_-adjusted_-fee$$ is the fee adjusted for TPRO selling transactions based on changes in ETH price.  
 
 ![eth_price_sell_component.png](.gitbook%2Fassets%2Feth_price_sell_component.png)
 
@@ -191,7 +191,7 @@ where:
 Considering both components, the final fee for TPRO token sales is determined using the following formula:
 
 $$
-Fee_{sell} = (1 - eth\_-weight) \cdot Fee\_{sell}^{price} + eth\_-weight \cdot Fee\_{sell}^{eth}
+Fee_{sell} = (1 - eth_-weight) \cdot Fee_{sell}^{price} + eth_-weight \cdot Fee_{sell}^{eth}
 $$
 
 <p align="center"><b>Formula 7. Dynamic Fee for TPRO Sale Transactions</b></p>
@@ -199,48 +199,48 @@ $$
 where:
 
 - $$Fee_{sell}$$ is the fee applied to TPRO selling transactions,  
-- $$eth\_-component\_-weight$$ is a parameter describing the weight of the ETH component throughout the fee for sale transactions,  
-- $$Fee\_{sell}^{price}$$ is the fee component based on TPRO price changes,  
-- $$Fee\_{sell}^{eth}$$ is the fee component based on ETH price changes.  
+- $$eth_-component_-weight$$ is a parameter describing the weight of the ETH component throughout the fee for sale transactions,  
+- $$Fee_{sell}^{price}$$ is the fee component based on TPRO price changes,  
+- $$Fee_{sell}^{eth}$$ is the fee component based on ETH price changes.  
 
 A primary objective of the dynamic fee mechanism is to allocate fees toward the impermanent loss protection mechanism. At a given moment $$t$$, when a purchase transaction occurs, the collected fee is distributed as follows:
 
 $$
-fee\_-protection\_-eth_{t} = protection\_-fee\_-rate \cdot fee\_-collected\_-eth_{t}
+fee_-protection_-eth_{t} = protection_-fee_-rate \cdot fee_-collected_-eth_{t}
 $$
 
 $$
-fee\_-lp\_-eth_{t} = fee\_-collected\_-eth_{t} - fee\_-protection\_-eth_{t}
+fee_-lp_-eth_{t} = fee_-collected_-eth_{t} - fee_-protection_-eth_{t}
 $$
 
 <p align="center"><b>Formula 8. Fee Allocation for ETH pool in the Protection Mechanism</b></p>
 
 where:
 
-- $$fee\_-protection\_-eth_{t}$$ is the portion of ETH fees allocated to the protection mechanism pool at time $$t$$,  
-- $$protection\_-fee\_-rate$$ is a parameter describing the portion of the fee that is charged on from the collected fee on protection mechanism,  
-- $$fee\_-collected\_-eth_{t}$$ is the total ETH fees collected at time $$t$$,  
-- $$fee\_-lp\_-eth_{t}$$ is the portion of ETH fees allocated to liquidity providers at time $$t$$.   
+- $$fee_-protection_-eth_{t}$$ is the portion of ETH fees allocated to the protection mechanism pool at time $$t$$,  
+- $$protection_-fee_-rate$$ is a parameter describing the portion of the fee that is charged on from the collected fee on protection mechanism,  
+- $$fee_-collected_-eth_{t}$$ is the total ETH fees collected at time $$t$$,  
+- $$fee_-lp_-eth_{t}$$ is the portion of ETH fees allocated to liquidity providers at time $$t$$.  
 
 A similar mechanism occurs for sales transactions, where a TPRO fee is charged. This division is determined by the following formula:
 
 $$
-fee\_-protection\_-token_{t} = protection\_-fee\_-rate \cdot fee\_-collected\_-token_{t}
+fee_-protection_-token_{t} = protection_-fee_-rate \cdot fee_-collected_-token_{t}
 $$
 
 $$
-fee\_-lp\_-token_{t} = fee\_-collected\_-token_{t} - fee\_-protection\_-token_{t}
+fee_-lp_-token_{t} = fee_-collected_-token_{t} - fee_-protection_-token_{t}
 $$
 
 <p align="center"><b>Formula 9. Fee Allocation for TPRO tokens pool in the Protection Mechanism</b></p>
 
 where:
 
-- $$fee\_-protection\_-token_{t}$$ is the portion of TPRO fees allocated to the protection mechanism pool at time $$t$$,  
-- $$protection\_-fee\_-rate$$ is a parameter describing the portion of the fee that is charged on from the collected fee on protection mechanism,  
-- $$fee\_-collected\_-token_{t}$$ is the total TPRO fees collected at time $$t$$,  
-- $$fee\_-lp\_-token_{t}$$ is the portion of TPRO fees allocated to liquidity providers at time $$t$$.  
-
+- $$fee_-protection_-token_{t}$$ is the portion of TPRO fees allocated to the protection mechanism pool at time $$t$$,  
+- $$protection_-fee_-rate$$ is a parameter describing the portion of the fee that is charged on from the collected fee on protection mechanism,  
+- $$fee_-collected_-token_{t}$$ is the total TPRO fees collected at time $$t$$,  
+- $$fee_-lp_-token_{t}$$ is the portion of TPRO fees allocated to liquidity providers at time $$t$$.
+- 
 <a name="impermanent_loss_protection"></a>
 # Impermanent Loss Protection Mechanism
 
@@ -274,42 +274,41 @@ Based on the above parameters, the mathematical specification of the mechanism i
 Fees collected by the liquidity pool for the protection mechanism are collected in separate pools of ETH and TPRO tokens. Each time a liquidity provider joins, leaves the protection program, or increases its deposit, the collected funds are redistributed to users to ensure a fair allocation of collateral. We define $$t_i$$ as the moments when the distribution of pool shares changes due to user actions. Let $$t_{i-1}$$ represent the previous moment of such a change, and $$t_0$$ denote the initial moment of the pool's creation. The amount of collected assets is calculated using the following formulas:
 
 $$
-protection\_-eth\_-pool_{t_{i}} = \sum_{t = t_{i-1}}^{t_{i}} fee\_-protection\_-eth_{t}
+protection_-eth_-pool_{t_{i}} = \sum_{t = t_{i-1}}^{t_{i}} fee_-protection_-eth_{t}
 $$
 
 $$
-protection\_-token\_-pool_{t_{i}} = \sum_{t = t_{i-1}}^{t_{i}} fee\_-protection\_-token_{t}
+protection_-token_-pool_{t_{i}} = \sum_{t = t_{i-1}}^{t_{i}} fee_-protection_-token_{t}
 $$
 
-<p align="center"><b>Formula 10. Accumulated Protection Fees in ETH and $TPRO</b></p>
+<p align="center"><b>Formula 10. Accumulated Protection Fees in ETH and TPRO</b></p>
 
 where:
-- $$protection\_-eth\_-pool_{t}$$ is the accumulated ETH fees in the protection pool by time $$t$$,  
-- $$protection\_-token\_-pool_{t}$$ is the accumulated TPRO fees in the protection pool by time $$t$$,  
-- $$fee\_-protection\_-eth_{t}$$ is the ETH fee allocated to the protection mechanism pool at time $$t$$,  
-- $$fee\_-protection\_-token_{t}$$ is the TPRO fee allocated to the protection mechanism pool at time $$t$$.  
+- $$protection_-eth_-pool_{t}$$ is the accumulated ETH fees in the protection pool by time $$t$$,  
+- $$protection_-token_-pool_{t}$$ is the accumulated TPRO fees in the protection pool by time $$t$$,  
+- $$fee_-protection_-eth_{t}$$ is the ETH fee allocated to the protection mechanism pool at time $$t$$,  
+- $$fee_-protection_-token_{t}$$ is the TPRO fee allocated to the protection mechanism pool at time $$t$$.  
 
 Both TPRO and ETH are distributed following the same principles. Let $$lp$$ describe a specific liquidity provider, the amount of ETH and TPRO reserved for liquidity provider $$lp$$, at time $$t_{i}$$ describes the formula:
 
 $$
-protection\_-eth_{t_{i}}^{lp} = \frac{tokens\_-deposited^{lp}}{\sum_{k=1}^{N} tokens\_-deposited^{k}} \cdot protection\_-eth\_-pool_{t_{i}}
+protection_-eth_{t_{i}}^{lp} = \frac{tokens_-deposited^{lp}}{\sum_{k=1}^{N} tokens_-deposited^{k}} \cdot protection_-eth_-pool_{t_{i}}
 $$
 
 $$
-protection\_-token_{t_{i}}^{lp} = \frac{tokens\_-deposited^{lp}}{\sum_{k=1}^{N} tokens\_-deposited^{k}} \cdot protection\_-token\_-pool_{t_{i}}
+protection_-token_{t_{i}}^{lp} = \frac{tokens_-deposited^{lp}}{\sum_{k=1}^{N} tokens_-deposited^{k}} \cdot protection_-token_-pool_{t_{i}}
 $$
 
 <p align="center"><b>Formula 11. Allocation of Protection Pool to Liquidity Providers</b></p>
 
 where:
-- $$protection\_-eth_{t}^{lp}$$ is the portion of the ETH protection mechanism pool allocated to the liquidity provider $$lp$$ at time $$t_{i}$$,  
-- $$protection\_-token_{t}^{lp}$$ is the portion of the TPRO protection mechanism pool allocated to the liquidity provider $$lp$$ at time $$t_{i}$$,  
-- $$tokens\_-deposited^{lp}$$ is the number of TPRO deposited by the specific liquidity provider,  
-- $$tokens\_-deposited^{k}$$ is the total number of TPRO deposited by liquidity provider $$k$$,  
-- $$protection\_-eth\_-pool_{t}$$ is the total ETH in the protection pool by time $$t_{i}$$.  
-
-$$protection\_-token\_-pool_{t_{i}}$$ is the total TPRO in the protection pool by time $$t_{i}$$,  
-$$N$$ is the total number of liquidity providers with some deposit in the protection mechanism.  
+- $$protection_-eth_{t}^{lp}$$ is the portion of the ETH protection mechanism pool allocated to the liquidity provider $$lp$$ at time $$t_{i}$$,  
+- $$protection_-token_{t}^{lp}$$ is the portion of the TPRO protection mechanism pool allocated to the liquidity provider $$lp$$ at time $$t_{i}$$,  
+- $$tokens_-deposited^{lp}$$ is the number of TPRO deposited by the specific liquidity provider,  
+- $$tokens_-deposited^{k}$$ is the total number of TPRO deposited by liquidity provider $$k$$,  
+- $$protection_-eth_-pool_{t}$$ is the total ETH in the protection pool by time $$t_{i}$$,  
+- $$protection_-token_-pool_{t_{i}}$$ is the total TPRO in the protection pool by time $$t_{i}$$,  
+- $$N$$ is the total number of liquidity providers with some deposit in the protection mechanism.  
 
 As long as the liquidity provider remains active and the collateral is not utilized, these funds remain secured for the provider and continue to accumulate throughout the entire period their TPRO are locked in deposit.
 
@@ -318,58 +317,58 @@ The withdrawal of TPRO and ETH designated for liquidity providers within the pro
 Initially, the portion of liquidity being withdrawn by the user is determined. To achieve this, a variable is calculated to represent the proportion of the user's total liquidity being withdrawn:
 
 $$
-withdrawal\_-ratio = \frac{lp\_-tokens\_-withdrawn}{sum\_-lp\_-tokens}
+withdrawal_-ratio = \frac{lp_-tokens_-withdrawn}{sum_-lp_-tokens}
 $$
 
 <p align="center"><b>Formula 12. Withdrawal Ratio for Liquidity Provider</b></p>
 
 where:
-- $$withdrawal\_-ratio$$ is the proportion of liquidity withdrawn by the liquidity provider,  
-- $$lp\_-tokens\_-withdrawn$$ is the number of liquidity provider tokens withdrawn by the specific liquidity provider,  
-- $$sum\_-lp\_-tokens$$ is the total number of liquidity provider tokens in the pool.  
-
+- $$withdrawal_-ratio$$ is the proportion of liquidity withdrawn by the liquidity provider,  
+- $$lp_-tokens_-withdrawn$$ is the number of liquidity provider tokens withdrawn by the specific liquidity provider,  
+- $$sum_-lp_-tokens$$ is the total number of liquidity provider tokens in the pool.
+- 
 A key step in calculating impermanent loss is estimating the hold position of a given liquidity provider. This involves tracking the assets contributed by the user to the liquidity pool at the time of adding liquidity. When liquidity is withdrawn, the hold position is adjusted by reducing it proportionally to the fraction of liquidity removed. This process is expressed mathematically as follows. Let $$t_{i}$$ denote the moment at which liquidity is added or withdrawn. By $$t_{0}$$ is meant the first addition of liquidity by a liquidity provider, then:
 
 $$
-hold\_-position_{t_{i}} = 
+hold_-position_{t_{i}} = 
 \begin{cases} 
-hold\_-position_{t_{i-1}} + eth\_-provided_{t_{i}} + tokens\_-provided_{t_{i}} \cdot spot\_-price_{t_{i}} & \text{if liquidity is added} \\  
-(1 - withdrawal\_-ratio) \cdot hold\_-position_{t_{i-1}} & \text{if liquidity is withdrawn}
+hold_-position_{t_{i-1}} + eth_-provided_{t_{i}} + tokens_-provided_{t_{i}} \cdot spot_-price_{t_{i}} & \text{if liquidity is added} \\  
+(1 - withdrawal_-ratio) \cdot hold_-position_{t_{i-1}} & \text{if liquidity is withdrawn}
 \end{cases}
 $$
 
 <p align="center"><b>Formula 13. Liquidity Provider's Estimated Hold Position</b></p>
 
 where:
-- $$hold\_-position_{t}$$ is the total hold position value of the liquidity provider at time $$t_{i}$$, expressed in ETH,  
-- $$eth\_-provided_{t_{i}}$$ is the amount of ETH provided by the liquidity provider at time $$t_{i}$$,  
-- $$tokens\_-provided_{t_{i}}$$ is the amount of TPRO provided by the liquidity provider at time $$t_{i}$$,  
-- $$spot\_-price_{t_{i}}$$ is the price of the TPRO at time $$t_{i}$$, expressed in ETH/TPRO,  
-- $$withdrawal\_-ratio$$ is the proportion of liquidity withdrawn by the liquidity provider.  
+- $$hold_-position_{t}$$ is the total hold position value of the liquidity provider at time $$t_{i}$$, expressed in ETH,  
+- $$eth_-provided_{t_{i}}$$ is the amount of ETH provided by the liquidity provider at time $$t_{i}$$,  
+- $$tokens_-provided_{t_{i}}$$ is the amount of TPRO provided by the liquidity provider at time $$t_{i}$$,  
+- $$spot_-price_{t_{i}}$$ is the price of the TPRO at time $$t_{i}$$, expressed in ETH/TPRO,  
+- $$withdrawal_-ratio$$ is the proportion of liquidity withdrawn by the liquidity provider.  
 
 **Note:** the $$hold\_-position$$ is updated after the entire withdrawal mechanism is completed, as its value before the withdrawal is required to determine the amount of funds to be withdrawn by the user.
 
 The next step is to calculate the liquidity provider's position, which takes into account the assets withdrawn from the pool and the fees charged. During the liquidity withdrawal process, the entire fee charged to the liquidity provider is allocated. In addition, the system tracks the total fees paid since the user last withdrew liquidity. The lp position is calculated as follows:
 
 $$
-lp\_-position = (withdrawn\_-tokens + fee\_-collected\_-tokens) \cdot spot\_-price + withdrawn\_-eth + fee\_-collected\_-eth
+lp_-position = (withdrawn_-tokens + fee_-collected_-tokens) \cdot spot_-price + withdrawn_-eth + fee_-collected_-eth
 $$
 
 <p align="center"><b>Formula 14. Liquidity Provider's Position</b></p>
 
 where:
 
-- $$lp\_-position$$ is the total value of the liquidity provider's position, expressed in ETH,  
-- $$withdrawn\_-tokens$$ is the number of TPRO withdrawn by the liquidity provider in current withdrawal,  
-- $$fee\_-collected\_-tokens$$ is the number of TPRO collected as fees by the liquidity provider since the last liquidity withdrawal,  
-- $$spot\_-price$$ is the current TPRO price, expressed in ETH/TPRO,  
-- $$withdrawn\_-eth$$ is the amount of ETH withdrawn by the liquidity provider in current withdrawal,  
-- $$fee\_-collected\_-eth$$ is the amount of ETH collected as fees by the liquidity provider since the last liquidity withdrawal.  
+- $$lp_-position$$ is the total value of the liquidity provider's position, expressed in ETH,  
+- $$withdrawn_-tokens$$ is the number of TPRO withdrawn by the liquidity provider in current withdrawal,  
+- $$fee_-collected_-tokens$$ is the number of TPRO collected as fees by the liquidity provider since the last liquidity withdrawal,  
+- $$spot_-price$$ is the current TPRO price, expressed in ETH/TPRO,  
+- $$withdrawn_-eth$$ is the amount of ETH withdrawn by the liquidity provider in current withdrawal,  
+- $$fee_-collected_-eth$$ is the amount of ETH collected as fees by the liquidity provider since the last liquidity withdrawal.  
 
 Using the estimated hold position and the liquidity provider's position, the loss incurred from providing liquidity, as opposed to simply holding TPRO and ETH, is calculated. This calculation is expressed by the following formula:
 
 $$
-loss = lp\_-position - hold\_-position \cdot withdrawal\_-ratio
+loss = lp_-position - hold_-position \cdot withdrawal_-ratio
 $$
 
 <p align="center"><b>Formula 15. Liquidity Provider's Loss</b></p>
@@ -377,78 +376,76 @@ $$
 where:
 
 - $$loss$$ is the loss incurred by the liquidity provider compared to the hold strategy, expressed in ETH,  
-- $$lp\_-position$$ is the total value of the liquidity provider's position, expressed in ETH,  
-- $$hold\_-position$$ is the total hold position value of the liquidity provider, expressed in ETH,  
-- $$withdrawal\_-ratio$$ is the proportion of liquidity withdrawn by the liquidity provider.  
+- $$lp_-position$$ is the total value of the liquidity provider's position, expressed in ETH,  
+- $$hold_-position$$ is the total hold position value of the liquidity provider, expressed in ETH,  
+- $$withdrawal_-ratio$$ is the proportion of liquidity withdrawn by the liquidity provider.  
 
 Once the user's loss is determined, the process of collateral payout begins. This payout occurs only if the calculated loss is greater than zero. A negative loss value indicates that the liquidity provider has not experienced any loss relative to their hold position, and therefore, no compensation is issued. In order to disburse funds, the following metrics are defined:
 
 $$
-full\_-value\_-protection = protection\_-eth + protection\_-token \cdot spot\_-price
+full_-value_-protection = protection_-eth + protection_-token \cdot spot_-price
 $$
 
 $$
-value\_-protection = full\_-value\_-protection \cdot withdrawal\_-ratio
+value_-protection = full_-value_-protection \cdot withdrawal_-ratio
 $$
 
 <p align="center"><b>Formula 16. Value of Protection for Liquidity Provider</b></p>
 
 where:
 
-- $$full\_-value\_-protection$$ is the total value of protection available for a liquidity provider, expressed in ETH,  
-- $$protection\_-eth$$ is the ETH allocated as protection,  
-- $$protection\_-token$$ is the TPRO allocated as protection,  
-- $$spot\_-price$$ is the price of the TPRO, expressed in ETH/TPRO,  
-- $$value\_-protection$$ is the final value of protection applied to the liquidity provider's withdrawn liquidity.  
+- $$full_-value_-protection$$ is the total value of protection available for a liquidity provider, expressed in ETH,  
+- $$protection_-eth$$ is the ETH allocated as protection,  
+- $$protection_-token$$ is the TPRO allocated as protection,  
+- $$spot_-price$$ is the price of the TPRO, expressed in ETH/TPRO,  
+- $$value_-protection$$ is the final value of protection applied to the liquidity provider's withdrawn liquidity.  
 
 The liquidity provider receives both TPRO and ETH, with the amounts of each asset calculated using the following formula:
 
 $$
-received\_-protection\_-eth =
+received_-protection_-eth =
 \begin{cases}
-protection\_-eth & \text{if } loss \geq full\_-value\_-protection, \\  
-withdrawal\_-ratio \cdot protection\_-eth \cdot \frac{loss}{value\_-protection} & \text{if } loss \leq value\_-protection, \\  
-protection\_-eth \cdot \frac{loss}{full\_-value\_-protection} & \text{otherwise.}
+protection_-eth & \text{if } loss \geq full_-value_-protection, \\  
+withdrawal_-ratio \cdot protection_-eth \cdot \frac{loss}{value_-protection} & \text{if } loss \leq value_-protection, \\  
+protection_-eth \cdot \frac{loss}{full_-value_-protection} & \text{otherwise.}
 \end{cases}
 $$
 
 $$
-received\_-protection\_-token =
+received_-protection_-token =
 \begin{cases}
-protection\_-token & \text{if } loss \geq full\_-value\_-protection, \\  
-withdrawal\_-ratio \cdot protection\_-token \cdot \frac{loss}{value\_-protection} & \text{if } loss \leq value\_-protection, \\  
-protection\_-token \cdot \frac{loss}{full\_-value\_-protection} & \text{otherwise.}
+protection_-token & \text{if } loss \geq full_-value_-protection, \\  
+withdrawal_-ratio \cdot protection_-token \cdot \frac{loss}{value_-protection} & \text{if } loss \leq value_-protection, \\  
+protection_-token \cdot \frac{loss}{full_-value_-protection} & \text{otherwise.}
 \end{cases}
 $$
 
 <p align="center"><b>Formula 17. Received Protection for Liquidity Provider</b></p>
-
 where:
 
-- $$received\_-protection\_-eth$$ is the amount of ETH received as protection by the liquidity provider,  
-- $$received\_-protection\_-token$$ is the amount of TPRO received as protection by the liquidity provider,  
-- $$protection\_-eth$$ is the ETH allocated to the liquidity provider for protection,  
-- $$protection\_-token$$ is the TPRO allocated to the liquidity provider for protection,  
+- $$received_-protection_-eth$$ is the amount of ETH received as protection by the liquidity provider,  
+- $$received_-protection_-token$$ is the amount of TPRO received as protection by the liquidity provider,  
+- $$protection_-eth$$ is the ETH allocated to the liquidity provider for protection,  
+- $$protection_-token$$ is the TPRO allocated to the liquidity provider for protection,  
 - $$loss$$ is the loss incurred by the liquidity provider compared to the hold strategy, expressed in ETH,  
-- $$full\_-value\_-protection$$ is the total value of protection available for a liquidity provider, expressed in ETH,  
-- $$value\_-protection$$ is the value of part of protection applied based on the withdrawal ratio.  
+- $$full_-value_-protection$$ is the total value of protection available for a liquidity provider, expressed in ETH,  
+- $$value_-protection$$ is the value of part of protection applied based on the withdrawal ratio.   
 
 Since the mechanism aims to offset the loss relative to the hold position, the amount of TPRO and ETH received may exceed the loss incurred. In such cases, a surplus is calculated, which is then split into a fee for the creators and a contribution to the protection pool. The surplus for both TPRO and ETH is determined using the following formula:
-
 $$
-protection\_-surplus\_-eth =
+protection_-surplus_-eth =
 \begin{cases}
-withdrawal\_-ratio \cdot protection\_-eth & \text{if } loss \leq 0, \\
-withdrawal\_-ratio \cdot protection\_-eth \cdot \frac{1 - loss}{value\_-protection} & \text{if } loss \leq value\_-protection, \\
+withdrawal_-ratio \cdot protection_-eth & \text{if } loss \leq 0, \\
+withdrawal_-ratio \cdot protection_-eth \cdot \frac{1 - loss}{value_-protection} & \text{if } loss \leq value_-protection, \\
 0 & \text{otherwise.}
 \end{cases}
 $$
 
 $$
-protection\_-surplus\_-token =
+protection_-surplus_-token =
 \begin{cases}
-withdrawal\_-ratio \cdot protection\_-token & \text{if } loss \leq 0, \\
-withdrawal\_-ratio \cdot protection\_-token \cdot \frac{1 - loss}{value\_-protection} & \text{if } loss \leq value\_-protection, \\
+withdrawal_-ratio \cdot protection_-token & \text{if } loss \leq 0, \\
+withdrawal_-ratio \cdot protection_-token \cdot \frac{1 - loss}{value_-protection} & \text{if } loss \leq value_-protection, \\
 0 & \text{otherwise.}
 \end{cases}
 $$
@@ -457,53 +454,51 @@ $$
 
 where:
 
-- $$protection\_-surplus\_-eth$$ is the surplus ETH that remains after covering the loss,  
-- $$protection\_-surplus\_-token$$ is the surplus TPRO that remains after covering the loss,  
-- $$protection\_-eth$$ is the ETH allocated to the liquidity provider for protection,  
-- $$protection\_-token$$ is the TPRO allocated to the liquidity provider for protection,  
+- $$protection_-surplus_-eth$$ is the surplus ETH that remains after covering the loss,  
+- $$protection_-surplus_-token$$ is the surplus TPRO that remains after covering the loss,  
+- $$protection_-eth$$ is the ETH allocated to the liquidity provider for protection,  
+- $$protection_-token$$ is the TPRO allocated to the liquidity provider for protection,  
 - $$loss$$ is the loss incurred relative to the hold position,  
-- $$value\_-protection$$ is the value of protection applied based on the withdrawal ratio,  
-- $$full\_-value\_-protection$$ is the total value of protection available for a liquidity provider, expressed in ETH,  
-- $$withdrawal\_-ratio$$ is the proportion of liquidity withdrawn by the liquidity provider.  
+- $$value_-protection$$ is the value of protection applied based on the withdrawal ratio,  
+- $$full_-value_-protection$$ is the total value of protection available for a liquidity provider, expressed in ETH,  
+- $$withdrawal_-ratio$$ is the proportion of liquidity withdrawn by the liquidity provider.  
 
 Based on the surplus, a fee for the TPRO Network is calculated. The calculation is performed as follows:
+$$
+success_-fee_-eth = protection_-surplus_-eth \cdot success_-fee
+$$
 
 $$
-success\_-fee\_-eth = protection\_-surplus\_-eth \cdot success\_-fee
-$$
-
-$$
-success\_-fee\_-token = protection\_-surplus\_-token \cdot success\_-fee
+success_-fee_-token = protection_-surplus_-token \cdot success_-fee
 $$
 
 <p align="center"><b>Formula 19. Success Fee</b></p>
 
 where:
 
-- $$success\_-fee\_-eth$$ is the success fee in ETH deducted from the protection surplus,  
-- $$success\_-fee\_-token$$ is the success fee in TPRO deducted from the protection surplus,  
-- $$protection\_-surplus\_-eth$$ is the surplus ETH that remains after covering the loss,  
-- $$protection\_-surplus\_-token$$ is the surplus TPRO that remains after covering the loss,  
-- $$success\_-fee$$ is the parameter describing the percentage of the protection surplus taken as a fee.  
+- $$success_-fee_-eth$$ is the success fee in ETH deducted from the protection surplus,  
+- $$success_-fee_-token$$ is the success fee in TPRO deducted from the protection surplus,  
+- $$protection_-surplus_-eth$$ is the surplus ETH that remains after covering the loss,  
+- $$protection_-surplus_-token$$ is the surplus TPRO that remains after covering the loss,  
+- $$success_-fee$$ is the parameter describing the percentage of the protection surplus taken as a fee.
 
 The remaining surplus is allocated to two pools within the protection mechanism and will be distributed among all liquidity providers in the future. Fee for protection pools from surplus is calculated as follows:
+$$
+fee_-protection_-eth = protection_-surplus_-eth - success_-fee_-eth
+$$
 
 $$
-fee\_-protection\_-eth = protection\_-surplus\_-eth - success\_-fee\_-eth
-$$
-
-$$
-fee\_-protection\_-token = protection\_-surplus\_-token - success\_-fee\_-token
+fee_-protection_-token = protection_-surplus_-token - success_-fee_-token
 $$
 
 <p align="center"><b>Formula 20. Surplus Protection Fee</b></p>
 
 where:
-- $$fee\_-protection\_-eth$$ is the ETH fee allocated to the protection mechanism pool,  
-- $$fee\_-protection\_-token$$ is the TPRO fee allocated to the protection mechanism pool,  
-- $$protection\_-surplus\_-eth$$ is the surplus ETH that remains after covering the loss,  
-- $$protection\_-surplus\_-token$$ is the surplus TPRO that remains after covering the loss,  
-- $$success\_-fee\_-eth$$ is the success fee in ETH deducted from the protection surplus,  
-- $$success\_-fee\_-token$$ is the success fee in TPRO deducted from the protection surplus.  
+- $$fee_-protection_-eth$$ is the ETH fee allocated to the protection mechanism pool,  
+- $$fee_-protection_-token$$ is the TPRO fee allocated to the protection mechanism pool,  
+- $$protection_-surplus_-eth$$ is the surplus ETH that remains after covering the loss,  
+- $$protection_-surplus_-token$$ is the surplus TPRO that remains after covering the loss,  
+- $$success_-fee_-eth$$ is the success fee in ETH deducted from the protection surplus,  
+- $$success_-fee_-token$$ is the success fee in TPRO deducted from the protection surplus.  
 
-From the funds allocated to the liquidity provider in the protection mechanism are deducted $$received\_-protection\_-eth, received\_-protection\_-token, protection\_-surplus\_-eth, protection\_-surplus\_-token$$.
+From the funds allocated to the liquidity provider in the protection mechanism are deducted $$received_-protection_-eth, received_-protection_-token, protection_-surplus_-eth, protection_-surplus_-token$$.
