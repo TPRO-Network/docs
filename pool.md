@@ -71,9 +71,9 @@ Based on these key metrics, the fee for TPRO purchase transactions is calculated
 
 $$
 Fee_{buy} = \begin{cases} 
-min\_-fee\_-buy, &\text{if } price_{current} \leq price\_-buy_{min} \\ 
-max\_-fee\_-buy, &\text{if } price_{current} \geq price\_-buy_{max} \\ 
-min\_-fee\_-buy + \frac{max\_-fee\_-buy - min\_-fee\_-buy}{price\_-buy_{max} - price\_-buy_{min}} \cdot (price_{current} - price\_-buy_{min}), &\text{otherwise}.
+min_-fee_-buy, &\text{if } price_{current} \leq price_-buy_{min} \\ 
+max_-fee_-buy, &\text{if } price_{current} \geq price_-buy_{max} \\ 
+min_-fee_-buy + \frac{max_-fee_-buy - min_-fee_-buy}{price_-buy_{max} - price_-buy_{min}} \cdot (price_{current} - price_-buy_{min}), &\text{otherwise}.
 \end{cases}
 $$
 
@@ -82,36 +82,36 @@ $$
 where:
 
 - $$Fee_{buy}$$ is the fee applied to a TPRO buying transaction,  
-- $$min\_-fee\_-buy$$ is a parameter describing the minimum fee applied to TPRO buying transactions,  
-- $$max\_-fee\_-buy$$ is a parameter describing the maximum fee applied to TPRO buying transactions,  
+- $$min_-fee_-buy$$ is a parameter describing the minimum fee applied to TPRO buying transactions,  
+- $$max_-fee_-buy$$ is a parameter describing the maximum fee applied to TPRO buying transactions,  
 - $$price_{current}$$ is the current price of the TPRO,  
-- $$price\_-buy_{min}$$ is the TPRO price that triggers the raising of the fee on purchase transactions,  
-- $$price\_-buy_{max}$$ is the price of the TPRO, beyond which the maximum fee on purchase transactions.  
+- $$price_-buy_{min}$$ is the TPRO price that triggers the raising of the fee on purchase transactions,  
+- $$price_-buy_{max}$$ is the price of the TPRO, beyond which the maximum fee on purchase transactions.  
 
 The chart below illustrates an example of how the fee value varies with the TPRO price.
 ![fee_buy_price_component.png](.gitbook%2Fassets%2Ffee_buy_price_component.png)
 
 <p align="center"><b>Figure 1. Buy transaction fee.</b></p>
 
-In the case of fee for TPRO sales, the mechanism is more elaborate. Its first component works on a similar basis. Based on the parameters and the average price of the previous day, the following metrics are determined:
+In the case of the fee for TPRO sales, the mechanism is more elaborate. Its first component works on a similar basis. Based on the parameters and the average price of the previous day, the following metrics are determined:
 
 $$
-price\_-sell_{min} = avg\_-price\_-24h_{before} \cdot (1 - min\_-price\_-tolerance\_-sell)
+price_-sell_{min} = avg_-price_-24h_{before} \cdot (1 - min_-price_-tolerance_-sell)
 $$
 
 $$
-price\_-sell_{max} = avg\_-price\_-24h_{before} \cdot (1 - max\_-price\_-tolerance\_-sell)
+price_-sell_{max} = avg_-price_-24h_{before} \cdot (1 - max_-price_-tolerance_-sell)
 $$
 
 <p align="center"><b>Formula 3. Dynamic Price Thresholds for TPRO Sale Transactions</b></p>
 
 where:
 
-- $$price\_-sell_{min}$$ is the TPRO price that triggers the raising of the fee on sale transactions,  
-- $$price\_-sell_{max}$$ is the price of the TPRO, beyond which the maximum fee on purchase transactions,  
-- $$avg\_-price\_-24h_{before}$$ is the average TPRO price over the last 24 hours preceding the update fee,  
-- $$min\_-price\_-tolerance\_-sell$$ is a parameter describing percentage change in the price of the TPRO that triggers fee raising on sales transactions,  
-- $$max\_-price\_-tolerance\_-sell$$ is a parameter describing the percentage change in the price of the TPRO, below which the maximum fee on sales transactions.  
+- $$price_-sell_{min}$$ is the TPRO price that triggers the raising of the fee on sale transactions,  
+- $$price_-sell_{max}$$ is the price of the TPRO, beyond which the maximum fee on purchase transactions,  
+- $$avg_-price_-24h_{before}$$ is the average TPRO price over the last 24 hours preceding the update fee,  
+- $$min_-price_-tolerance_-sell$$ is a parameter describing percentage change in the price of the TPRO that triggers fee raising on sales transactions,  
+- $$max_-price_-tolerance_-sell$$ is a parameter describing the percentage change in the price of the TPRO, below which the maximum fee on sales transactions.  
 
 These key metrics are used to determine the first component of fee.
 
