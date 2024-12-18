@@ -89,6 +89,7 @@ where:
 - $$price_-buy_{max}$$ is the price of the TPRO, beyond which the maximum fee on purchase transactions.  
 
 The chart below illustrates an example of how the fee value varies with the TPRO price.
+
 ![fee_buy_price_component.png](.gitbook%2Fassets%2Ffee_buy_price_component.png)
 
 <p align="center"><b>Figure 1. Buy transaction fee.</b></p>
@@ -240,7 +241,7 @@ where:
 - $$protection_-fee_-rate$$ is a parameter describing the portion of the fee that is charged on from the collected fee on protection mechanism,  
 - $$fee_-collected_-token_{t}$$ is the total TPRO fees collected at time $$t$$,  
 - $$fee_-lp_-token_{t}$$ is the portion of TPRO fees allocated to liquidity providers at time $$t$$.
-- 
+  
 <a name="impermanent_loss_protection"></a>
 # Impermanent Loss Protection Mechanism
 
