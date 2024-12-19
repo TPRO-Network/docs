@@ -1,14 +1,30 @@
+### Innovative Liquidity Pool with Impermanent Loss protection and Yield generation.
+The TPRO Network has developed a cutting-edge liquidity pool system designed to maximize support for all network participants. This innovative approach optimizes earnings for liquidity providers, reduces impermanent loss, and enhances the system’s resilience to market fluctuations.
+
+The **80/20 Weighted Liquidity Pool**, pioneered by Balancer, lowers entry barriers for liquidity providers, driving higher Total Value Locked (TVL) while minimizing impermanent loss. The **Dynamic Fee Mechanism** further boosts profitability by optimizing fees generated from the pool, and an **Impermanent Loss Protection** mechanism ensures additional security for liquidity providers, significantly enhancing the overall yield from investments. 
+
+
 All of the information presented is at the in progress stage, so the final technical implementation could change. 
 
 <a name="balancer_pool"></a>
 # Liquidity Pool - Balancer
-The TPRO Network team is currently evaluating four different types of Balancer pools to optimize liquidity management and ensure economic efficiency. The final selection will be determined based on the results of economic simulations and the feasibility of implementation. The pools under consideration are as follows:
+The TPRO Network team evaluated four different types of Balancer pools to optimize liquidity management and ensure economic efficiency. The pools under consideration were as follows:
+
 - Standard 50/50 Pool - A classic Balancer pool where liquidity is equally distributed between two assets, providing balanced exposure and straightforward liquidity provisioning.
 - 80/20 Weighted Pool - A pool with an asymmetric weight distribution, designed to minimize impermanent loss for a primary asset while still enabling efficient trading and liquidity. This structure is particularly suitable for projects aiming to support a dominant asset.
 - Multi-Asset Pool - A flexible pool that can support multiple tokens with custom weightings. It offers a diversified approach to liquidity management, allowing for broader asset exposure within a single pool.
 - Boosted Pool - An advanced pool that integrates with external yield protocols (e.g., Aave) to generate additional returns on idle liquidity while maintaining trading efficiency. This approach combines liquidity provisioning with yield optimization.
 
-The final decision regarding the type of pool to be implemented will be based on a thorough evaluation of simulation outcomes and technical feasibility. Once the selection is finalized, this documentation will be updated to reflect the chosen pool configuration.
+The TPRO Network team carefully evaluated four different types of Balancer pools to optimize liquidity management and ensure economic efficiency. After thorough analysis and simulations, we selected the 80/20 Weighted Pool as the optimal solution.
+
+This pool offers a modern and secure approach to liquidity provisioning, addressing key challenges faced by liquidity providers:
+- **Reduced Impermanent Loss**: The asymmetric 80/20 weight distribution minimizes the impact of price volatility on the primary asset, ensuring a safer environment for liquidity providers.
+- **Lower Entry Barrier**: The reduced requirement for reserve contributions makes it easier for participants to become liquidity providers, increasing accessibility.
+- **Increased Attractiveness**: By offering enhanced security and efficiency, the 80/20 Weighted Pool provides a compelling alternative to traditional liquidity models.
+
+Furthermore, the 80/20 Weighted Pool is designed to increase the Total Value Locked (TVL) within the liquidity pool, surpassing the current performance on Uniswap. This makes it an innovative and appealing choice for both the project and its community of liquidity providers.
+
+The implementation of this pool underscores our commitment to fostering economic efficiency, accessibility, and safety in liquidity management.
 
 <a name="dynamic_fee"></a>
 # Dynamic Fee
