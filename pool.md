@@ -1,4 +1,5 @@
 **Innovative Liquidity Pool with Impermanent Loss protection and Yield generation**
+
 The TPRO Network has developed a cutting-edge liquidity pool system designed to maximize support for all network participants. This innovative approach optimizes earnings for liquidity providers, reduces impermanent loss, and enhances the system’s resilience to market fluctuations.
 
 The **80/20 Weighted Liquidity Pool**, pioneered by Balancer, lowers entry barriers for liquidity providers, driving higher Total Value Locked (TVL) while minimizing impermanent loss. The **Dynamic Fee Mechanism** further boosts profitability by optimizing fees generated from the pool, and an **Impermanent Loss Protection** mechanism ensures additional security for liquidity providers, significantly enhancing the overall yield from investments. 
