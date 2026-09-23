@@ -2,7 +2,19 @@
 
 ## Description
 
-This repository contains official documentation for TPRO project. We recommend you to read this pages on [official website](https://tpro.pro/docs). If you see any problems or misleading parts of this document, tell use about it in [Github Issues](https://github.com/tpro-network/docs/issues) or consider making contributions yourself.
+This repository holds the original TPRO design documentation (2022-2024): the network design, the economic simulations and the pool mechanics. It is published at [doc.tpro.network](https://doc.tpro.network). If you see any problems or misleading parts, tell us in [GitHub Issues](https://github.com/TPRO-Network/docs/issues) or consider contributing.
+
+## The TPRO token (2026)
+
+Since 22 September 2026 the TPRO token lives on **Base**. Everything current about the token (contract, supply, allocation, locks, legacy addresses) is on [tpro.network/token](https://tpro.network/token/); every official channel and address is on [tpro.network/official](https://tpro.network/official/). The token contracts, the snapshot tool and the claim page are in [TPRO-Network/tpro-token](https://github.com/TPRO-Network/tpro-token).
+
+| Chain | Address | Status |
+|---|---|---|
+| Base | `0xBc2029b41cedf44CFdD7BaeE9c50B02bf0c8f79C` | the TPRO token (verified on [Basescan](https://basescan.org/token/0xBc2029b41cedf44CFdD7BaeE9c50B02bf0c8f79C)) |
+| Ethereum | `0x3540abe4f288b280a0740ad5121aec337c404d15` | legacy since the snapshot of 21 September 2026, no liquidity |
+| Polygon | `0xd24157aa1097486dc9d7cf094a7e15026e566b5d` | legacy child token |
+
+Holders of record claim 1:1 on [claim.tpro.network](https://claim.tpro.network) until 22 September 2029. We never DM first and never ask for keys, signatures or transactions on Ethereum.
 
 ## Table of Contents
 
